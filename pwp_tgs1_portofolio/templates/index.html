@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CV - Khalid Aziz</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- CSS Utama -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            PORTOFOLIO
+        </a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
+            aria-label="Buka navigasi">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">Biodata</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/proyek">Proyek</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pendidikan">Pendidikan</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/keahlian">Keahlian</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/kontak">Kontak</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Konten Utama -->
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <!-- Kartu Biodata -->
+            <div class="card mb-4">
+
+                <div class="card-header text-center py-4">
+                    <h2 class="section-title">KHALID AZIZ</h2>
+                    <p class="mb-0">Mahasiswa Informatika</p>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <h5 class="section-title">
+                        Biodata Diri
+                    </h5>
+
+                    <table class="table table-borderless mb-0">
+                        <tr>
+                            <th style="width: 35%;">Nama Lengkap</th>
+                            <td>: KHALID AZIZ</td>
+                        </tr>
+
+                        <tr>
+                            <th>NPM</th>
+                            <td>: 5240411083</td>
+                        </tr>
+
+                        <tr>
+                            <th>Program Studi</th>
+                            <td>: S1 Informatika</td>
+                        </tr>
+
+                        <tr>
+                            <th>Kelas</th>
+                            <td>: IF-B</td>
+                        </tr>
+
+                        <tr>
+                            <th>Universitas</th>
+                            <td>: Universitas Teknologi Yogyakarta</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+
+            <!-- Kartu Tentang Saya -->
+            <div class="card">
+
+                <div class="card-body p-4">
+
+                    <h5 class="section-title">
+                        Tentang Saya
+                    </h5>
+
+                    <p class="text-secondary mb-0" style="line-height: 1.8;">
+                        Saya adalah mahasiswa Informatika yang sedang
+                        mempelajari pengembangan aplikasi dan sistem
+                        berbasis teknologi. Saya mempelajari pemrograman,
+                        pengembangan web, pengolahan basis data, serta
+                        teknologi aplikasi sebagai bagian dari proses
+                        meningkatkan kemampuan di bidang informatika.
+                    </p>
+
+                </div>
+            </div>
+
+            <!-- Informasi Navigasi -->
+            <div class="text-center mt-4">
+                <p class="text-muted small">
+                    Silakan gunakan menu navigasi untuk melihat
+                    informasi proyek, pendidikan, keahlian, dan kontak.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS untuk menu responsif -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

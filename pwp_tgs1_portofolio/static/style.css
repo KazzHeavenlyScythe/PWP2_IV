@@ -1,0 +1,234 @@
+/* ========================================
+   1. PENGATURAN DASAR HALAMAN
+======================================== */
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #3d321b;
+    background: linear-gradient(
+        135deg,
+        #fffdf5 0%,
+        #fff1b8 45%,
+        #e6c15a 100%
+    );
+    background-attachment: fixed;
+}
+
+/* ========================================
+   2. NAVBAR DAN IKON MENU
+======================================== */
+
+.navbar {
+    background: linear-gradient(
+        90deg,
+        #b8860b,
+        #e6c15a,
+        #fff1b8
+    );
+    box-shadow: 0 3px 12px rgba(100, 75, 10, 0.15);
+}
+
+.navbar-brand,
+.navbar .nav-link {
+    color: #3d2c00 !important;
+    font-weight: 600;
+}
+
+.navbar .nav-link:hover {
+    color: #ffffff !important;
+}
+
+.navbar-toggler {
+    border: 1px solid #9a7200;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.3);
+}
+
+.navbar-toggler-icon {
+    filter: sepia(1) saturate(3) brightness(0.7);
+}
+
+/* ========================================
+   3. KARTU DAN HEADER
+======================================== */
+
+.card {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid #e5c76b;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(120, 90, 15, 0.12);
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(
+        90deg,
+        #d4af37,
+        #fff0b3
+    );
+    color: #493700;
+    border-bottom: 1px solid #e5c76b;
+    font-weight: bold;
+}
+
+.card-header .section-title {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* ========================================
+   4. JUDUL DAN BAGIAN KONTEN
+======================================== */
+
+h1,
+h2,
+h3,
+h4 {
+    color: #493700;
+}
+
+.section-title {
+    color: #493700;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #d4af37;
+}
+
+/* ========================================
+   5. TOMBOL DAN TAUTAN
+======================================== */
+
+.btn-gold {
+    background: linear-gradient(
+        135deg,
+        #d4af37,
+        #f8e7a0
+    );
+    color: #3d2c00;
+    border: 1px solid #c5a028;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-gold:hover {
+    background: linear-gradient(
+        135deg,
+        #b8860b,
+        #d4af37
+    );
+    color: #ffffff;
+}
+
+a {
+    color: #9a7200;
+}
+
+a:hover {
+    color: #6f5000;
+}
+
+/* ========================================
+   6. TABEL
+======================================== */
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #3d321b;
+}
+
+.table th {
+    color: #493700;
+    font-weight: 600;
+}
+
+.table td {
+    color: #3d321b;
+}
+
+/* ========================================
+   7. RIWAYAT PENDIDIKAN
+======================================== */
+
+.education-item {
+    border-left: 4px solid #d4af37;
+    padding: 4px 0 4px 18px;
+}
+
+.education-item h5 {
+    color: #493700;
+    font-weight: bold;
+}
+
+.education-major {
+    color: #9a7200;
+    font-weight: 600;
+}
+
+/* ========================================
+   8. KEAHLIAN DAN PROGRESS BAR
+======================================== */
+
+.progress {
+    height: 22px;
+    background-color: #f5edcf;
+    border: 1px solid #e5c76b;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(
+        90deg,
+        #b8860b,
+        #d4af37,
+        #f8e7a0
+    );
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+.skill-label {
+    color: #9a7200;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.skill-note {
+    padding: 15px;
+    background: #fff9e6;
+    color: #6f5a25;
+    border: 1px solid #e5c76b;
+    border-left: 4px solid #d4af37;
+    border-radius: 10px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   9. HALAMAN KONTAK
+======================================== */
+
+.contact-link {
+    color: #9a7200;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #6f5000;
+    text-decoration: underline;
+}
+
+/* ========================================
+   10. FOOTER
+======================================== */
+
+footer {
+    color: #6f5a25;
+}
