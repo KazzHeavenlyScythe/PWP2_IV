@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="krs-header mb-4">
+    <div>
+        <span class="welcome-label">STUDENT ACADEMIC PORTAL</span>
+        <h2>Kartu Rencana Studi</h2>
+        <p>Kelola dan pilih mata kuliah semester ini.</p>
+    </div>
+    <div class="krs-symbol">🎓</div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-6 col-lg-3">
+        <div class="stat-card">
+            <span>Mata Kuliah Diambil</span>
+            <h2>{{ statistik.jumlah_mk }}</h2>
+        </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+        <div class="stat-card">
+            <span>Total SKS</span>
+            <h2>{{ statistik.total_sks }}</h2>
+        </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+        <div class="stat-card">
+            <span>SKS Teori</span>
+            <h2>{{ statistik.teori }}</h2>
+        </div>
+    </div>
+
+    <div class="col-6 col-lg-3">
+        <div class="stat-card">
+            <span>SKS Praktik</span>
+            <h2>{{ statistik.praktik }}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="course-heading">
+    <div>
+        <h4>Daftar Mata Kuliah</h4>
+        <p>Pilih mata kuliah yang ingin diambil.</p>
+    </div>
+    <span class="total-badge">{{ data|length }} tersedia</span>
+</div>
+
+<div class="course-toolbar mb-4">
+    <input type="text" id="searchMK"
+           class="form-control"
+           placeholder="Cari mata kuliah atau kode...">
+
+    <select id="filterHari" class="form-select">
+        <option value="">Semua Hari</option>
+        <option>Senin</option>
+        <option>Selasa</option>
+        <option>Rabu</option>
+        <option>Kamis</option>
+        <option>Jumat</option>
+    </select>
+
+    <select id="filterJenis" class="form-select">
+        <option value="">Semua Jenis</option>
+        <option value="Teori">Teori</option>
+        <option value="Praktik">Praktik</option>
+    </select>
+</div>
+
+<div class="row g-3" id="courseList">
+
+{% for mk in data %}
+<div class="col-md-6 col-xl-4 course-item"
+     data-search="{{ (mk.nama_mk ~ ' ' ~ mk.kode_mk)|lower }}"
+     data-hari="{{ mk.hari or '' }}"
+     data-jenis="{{ mk.jenis or 'Teori' }}">
+
+    <div class="modern-course h-100">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="course-type">
+                {{ (mk.jenis or 'Teori')|upper }}
+            </span>
+            <span class="sks-label">{{ mk.sks }} SKS</span>
+        </div>
+
+        <h5>{{ mk.nama_mk }}</h5>
+
+        <div class="course-meta">
+            <span>📅 {{ mk.hari or 'Jadwal belum diatur' }}</span>
+            <span>📍 {{ mk.ruang or 'Ruang belum diatur' }}</span>
+        </div>
+
+        {% if mk.jam_mulai and mk.jam_selesai %}
+        <div class="schedule-time">
+            <span>{{ mk.jam_mulai|string|truncate(5, True, '') }}</span>
+            <span class="time-arrow">→</span>
+            <span>{{ mk.jam_selesai|string|truncate(5, True, '') }}</span>
+        </div>
+        {% endif %}
+
+        <div class="mt-3">
+        {% if mk.sudah_diambil %}
+            <button class="btn btn-taken w-100" disabled>
+                ✓ Sudah Diambil
+            </button>
+        {% else %}
+            <button class="btn btn-gold w-100 js-ambil-mk"
+                    data-id="{{ mk.id }}">
+                + Ambil Mata Kuliah
+            </button>
+        {% endif %}
+        </div>
+
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+<div id="noCourse" class="empty-card mt-3 d-none">
+    Mata kuliah tidak ditemukan.
+</div>
+
+{% endblock %}

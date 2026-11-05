@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="welcome-card mb-4">
+    <div>
+        <span class="welcome-label">STUDENT PORTAL</span>
+        <h2>Selamat Datang, {{ nama }}!</h2>
+        <p>Kelola pengambilan mata kuliah dengan mudah melalui portal mahasiswa.</p>
+
+        <a href="{{ url_for('matakuliah') }}" class="btn btn-gold mt-2">
+            Mulai Pengambilan <span>&rarr;</span>
+        </a>
+    </div>
+    <div class="welcome-icon">
+        <i class="fs-1">🎓</i>
+    </div>
+</div>
+
+<h5 class="section-title mb-3">Menu Utama</h5>
+
+<div class="row g-3">
+
+    <div class="col-md-6">
+        <div class="menu-card">
+            <div class="menu-icon yellow-icon">📚</div>
+            <h5>Daftar Mata Kuliah</h5>
+            <p>Lihat mata kuliah yang tersedia dan pilih sesuai kebutuhan.</p>
+            <a href="{{ url_for('matakuliah') }}" class="btn btn-outline-dark">
+                Lihat Mata Kuliah →
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="menu-card">
+            <div class="menu-icon dark-icon">📋</div>
+            <h5>Mata Kuliah Saya</h5>
+            <p>Lihat daftar mata kuliah yang sudah berhasil diambil.</p>
+            <a href="{{ url_for('matakuliah_saya') }}" class="btn btn-outline-dark">
+                Lihat Riwayat →
+            </a>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

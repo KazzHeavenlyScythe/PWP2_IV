@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="krs-header mb-4">
+    <div>
+        <span class="welcome-label">MY ACADEMIC RECORD</span>
+        <h2>Mata Kuliah Saya</h2>
+        <p>Daftar mata kuliah yang sudah berhasil diambil.</p>
+    </div>
+    <div class="krs-symbol">📚</div>
+</div>
+
+<div class="row g-3">
+
+{% for mk in data %}
+<div class="col-md-6 col-xl-4">
+    <div class="modern-course h-100">
+
+        <div class="d-flex justify-content-between mb-3">
+            <span class="course-type">{{ (mk.jenis or 'Teori')|upper }}</span>
+            <span class="sks-label">{{ mk.sks }} SKS</span>
+        </div>
+
+        <h5>{{ mk.nama_mk }}</h5>
+
+        <div class="course-meta">
+            <span>📅 {{ mk.hari or 'Jadwal belum diatur' }}</span>
+            <span>📍 {{ mk.ruang or 'Ruang belum diatur' }}</span>
+        </div>
+
+        {% if mk.jam_mulai and mk.jam_selesai %}
+        <div class="schedule-time">
+            {{ mk.jam_mulai|string|truncate(5, True, '') }}
+            <span class="time-arrow">→</span>
+            {{ mk.jam_selesai|string|truncate(5, True, '') }}
+        </div>
+        {% endif %}
+
+        <div class="taken-status">
+            <span>✓ Berhasil diambil</span>
+            <small>{{ mk.tanggal_ambil }}</small>
+        </div>
+
+    </div>
+</div>
+
+{% else %}
+<div class="col-12">
+    <div class="empty-card">
+        <div style="font-size:40px">📚</div>
+        <h5>Belum Ada Mata Kuliah</h5>
+        <p>Silakan pilih mata kuliah terlebih dahulu.</p>
+        <a href="{{ url_for('matakuliah') }}" class="btn btn-gold">
+            Pilih Mata Kuliah
+        </a>
+    </div>
+</div>
+{% endfor %}
+
+</div>
+
+{% endblock %}
